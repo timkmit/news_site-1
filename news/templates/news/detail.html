@@ -7,16 +7,21 @@
 {%endblock css%}
 
 {%block content%}
+
 <div class="content-detail">
 {%if news.photo%}
   <img src="{{news.photo.url}}" alt='' class="mr-3">
 {% else %}
   <img src='https://nos.twnsnd.co/image/697559999966314497' alt=''>
 {% endif %}
-<p>{{news.title}}</p>
-<p>{{news.content|safe}}</p>
-<p>{{news.autor}}</p>
-        {% if  request.user == news.autor %}
+<div class="inf">
+  <p>{{news.title}}</p>
+  {{news.content|safe}}
+  <p>{{news.autor}}</p>
+</div>
+</div>
+<div class="like-delete-showed">
+{% if  request.user == news.autor %}
           <a href="{%url 'news:update' news.id%}" class="btn btn-dark text-whit">обновить</a>
           <a href="{%url 'news:delete' news.id%}" class="btn btn-dark text-whit">удалить</a>
         {%endif%}

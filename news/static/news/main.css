@@ -19,12 +19,12 @@ body {
 a.logo{
     margin-left: 3%;
     color: #fffae4;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     margin-top: 1rem;
     transition: 0.2s;
     text-decoration: none;
-    z-index: 555;
+    z-index: 10;
 }
 a.logo:hover{
     text-shadow: 0.1em 0.1em 2px rgba(146, 146, 146, 0.418);
@@ -63,7 +63,7 @@ a.logo:hover{
     /*background-color: rgb(145, 46, 46);*/
     width: 96%;
     height: 100%;
-    z-index: 2;
+    z-index: 5;
   }
   .block{
     margin: 1.2rem;
@@ -73,10 +73,14 @@ a.logo:hover{
     background-color: #555;
     align-items: center;
     flex-direction: column;
-    z-index: 3;
+    z-index: 5;
     border-radius: 10px;
     transition: 0.2s;
     display: flex;
+  }
+  .block:hover{
+    box-shadow:0em 0em 0.25em 0.25em rgba(146, 146, 146, 0.418);
+    transition: 0.2s;
   }
   .block img{
     border-radius: 5px;
@@ -86,7 +90,7 @@ a.logo:hover{
     object-fit: cover;
     overflow: hidden;
     transition: 0.3s;
-    z-index: 4;
+    z-index: 5;
   }
   .block img:hover{
     border-radius: 7px;
@@ -95,31 +99,32 @@ a.logo:hover{
     height: 310px;
     transition: 0.3s;
   }
-  .block:hover{
-    box-shadow:0em 0em 0.25em 0.25em rgba(146, 146, 146, 0.418);
-    transition: 0.2s;
-  }
+  
   .block .info{
     text-align: center;
     margin-top: auto;
     margin-bottom: 0.7rem;
     color: #ffffff;
+    z-index: 5;
   }
   .card-text{
     font-size: 1.3rem;
+    z-index: 5;
   }
   .btn{
     color: rgb(128, 128, 128);
     transition: 0.3s;
+    z-index: 5;
   }
   .btn:hover{
     transition: 0.3s;
     text-shadow: 0.1em 0.1em 2px rgba(0, 0, 0, 0.418);
+
   }
   .card-footer{
     font-size: 0.8rem;
     color: rgb(141, 141, 141);
-    
+    z-index: 5;
   }
 
 /*ОТСЮДА ФОН*/
