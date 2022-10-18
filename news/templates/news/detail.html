@@ -1,0 +1,30 @@
+{% extends 'news/index.html'%}
+
+{%block css%}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'news/detail.css'%}" type="text/css">
+  <script src="{% static 'news/main.js' %}"></script>
+{%endblock css%}
+
+{%block content%}
+<div class="content-detail">
+{%if news.photo%}
+  <img src="{{news.photo.url}}" alt='' class="mr-3">
+{% else %}
+  <img src='https://nos.twnsnd.co/image/697559999966314497' alt=''>
+{% endif %}
+<p>{{news.title}}</p>
+<p>{{news.content|safe}}</p>
+<p>{{news.autor}}</p>
+        {% if  request.user == news.autor %}
+          <a href="{%url 'news:update' news.id%}" class="btn btn-dark text-whit">обновить</a>
+          <a href="{%url 'news:delete' news.id%}" class="btn btn-dark text-whit">удалить</a>
+        {%endif%}
+          <a href="{%url 'news:add' news.id%}" class="btn btn-dark text-whit">
+            лайкнуть <span class="badge bg-secondary">{{news.total_likes}}</span>
+          </a>
+          <a href="#" class="btn btn-dark text-whit">
+            просмотрено <span class="badge bg-secondary">{{news.total_views}}</span>
+          </a>
+</div>
+{%endblock content%}

@@ -1,0 +1,22 @@
+{% extends 'news/index.html'%}
+
+
+{% load static %}
+{%block css%}
+ <link rel="stylesheet" href='{%static "news/main.css"%}'>
+{%endblock css%}
+{%block content%}
+
+<div class="alert alert-success mb-0" role="alert">
+    Пожалуйста подтвердите почту, чтобы добавлять новости на сайт
+</div>
+
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <p>{{form.email}}</p>
+    <p>{{form.captcha}}</p>
+    <button class="btn btn-success" type="submit">подтвердить</button>
+</form>
+
+
+{% endblock content%}

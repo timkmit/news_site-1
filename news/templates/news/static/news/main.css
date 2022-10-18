@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+.text{
+    color: black;
+    width:251px;
+    /*ширина*/
+    height:340px;
+    /*высота*/
+    
+    padding: 30px;
+    background-color:rgb(255, 255, 255);
+    border-color:dark;
+    border-width: 1px;
+    border-style: solid;
+
+    margin: 20px 541.5px;     
+}
+
+.socialaccount_provider_vk{
+    width: 100%;
+    margin-bottom: 30px;
+    color: 000000;
+    background-color: #5181B8 ;
+}

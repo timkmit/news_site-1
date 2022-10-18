@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<html lang="en">
+
+  <head>
+    {% load static %}
+    {%block css%}
+    <link rel="stylesheet" href="{% static 'news/main.css'%}" type="text/css">
+    <script src="{% static 'news/main.js' %}"></script>1
+    {%endblock css%}
+  </head>
+
+  <body>
+    <div class="header">
+      <a class="logo" href="{%url 'news:index'%}">News ToDay</a>
+      <!--<a class="logo" href="{%url 'news:index'%}">News ToDay</a>-->
+    </div>
+
+{%block content%}
+    <div class="content">
+    {%for item in news%}
+      
+        <div class="block">
+          {%if item.photo%}
+          <img src="{{item.photo.url}}" alt='' class="mr-3">
+          {% else %}
+          <img src='https://nos.twnsnd.co/image/697559999966314497' alt=''>
+          {% endif %}
+          <div class="info">
+            <p class="card-text text-dark">{{item.title_content}}</p>
+            <a href="{% url 'news:detail' item.id%}" class="btn btn-dark text-whit">read more..</a>
+            <div class="card-footer text-dark"><br>{{item.created_ad}}-{{item.autor}} </div>
+          </div>
+          </div>
+    {%endfor%}
+    </div>
+{%endblock content%}
+
+
+    <div id="fixedDiv" class="fixed fixed-top">
+      contacts:timengalytchev@mail.ru
+  </div>
+
+  <div class="area" >
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+</div >
+  </body>
+</html>

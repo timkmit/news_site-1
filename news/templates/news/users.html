@@ -1,0 +1,9 @@
+
+{% extends 'news/index.html'%}
+{{block.super }}
+{%block content%}
+
+{% for item in User%}
+    {{item.username}}==={{item.id}}</p>
+{%endfor%}
+{%endblock%}

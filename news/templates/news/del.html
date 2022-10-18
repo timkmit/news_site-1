@@ -1,0 +1,24 @@
+{% extends 'news/index.html'%}
+{%block css%}
+{% load static %}
+
+{%endblock css%}
+
+
+
+
+{%block content%}
+<div class="features">
+    <form method="post" enctype="multipart/form-data" >
+        <h1>Удалить статью</h1>
+        {% csrf_token %}<br>
+        <span>{{ eror }}</span>
+        <button class="btn btn-success" type="submit">удалить статью</button>
+    </form>
+</div>
+
+
+{%endblock content%}
+
+
+

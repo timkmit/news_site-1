@@ -1,0 +1,29 @@
+{% extends 'news/index.html'%}
+{% load static %}
+{%block css%}
+
+{%endblock css%}
+
+
+{%block content%}
+
+
+
+<div class="mx-3">
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}<br>
+        {{form.title}}<br>
+        {{form.category}}<br>
+        {{form.title_content}}<br>
+        {{form.content}}<br>
+        {{form.created_ad}}<br>
+        {{form.photo}}<br>
+
+        <span>{{ eror }}</span>
+        <button class="btn btn-success" type="submit">опубликовать</button>
+    </form>
+</div>
+{% endblock content%}
+
+
+

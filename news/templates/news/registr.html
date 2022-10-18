@@ -1,0 +1,38 @@
+{% extends 'news/index.html'%}
+
+{% load static %}
+{%block css%}
+ <link rel="stylesheet" href='{%static "news/main.css"%}'>
+{%endblock css%}
+
+{%block content%}
+
+<!--
+{% if email %}
+<h2>Мы отправили на вашу почту {{email}} сообщение с кодом для подтверждения</h2>
+<h3> Введите пожалуйтса код </h3>
+
+<form method="post" action="{%url 'news:account_validate' user.id%}" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <p>{{form.code}}</p>
+    <button class="btn btn-success" type="submit">подтвердить</button>
+</form>
+
+{%endif%}
+{{else}}{{endelse}}
+-->
+<form method="post" enctype="multipart/form-data" >
+    <p>{% csrf_token %}</p>
+    <p>{{form.username}}</p>
+    <p>{{form.email}}</p>
+    <p>{{form.password1}}</p>
+    <p>{{form.password2}}</p>
+    <p>{{form.captcha}}</p>
+    <button class="btn btn-success" type="submit">Зарегистрироваться</button>
+</form>
+<br>
+
+
+
+
+{% endblock content%}
